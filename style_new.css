@@ -1,0 +1,146 @@
+* {
+	box-sizing : border-box;
+	padding : 0;
+	margin: 0;
+	/*background-color : #b8d3ff;*/
+} 
+html {
+  scroll-behavior: smooth;
+}
+.container {
+	text-align: center;
+	margin: 0 auto;
+  max-width: 1500px; 
+  padding: 0 10px;
+}
+
+.container a{
+  font-size: 20px;
+  color: #fff;
+}
+.container4{
+  margin: 0 auto;
+  position: relative;
+  top: 100px;
+  height: 700px;
+  width : 1000px;
+  bottom: 400px;
+  position: relative;
+  text-align: center;
+  background-size: cover;
+}
+
+#About{
+  background-color: #f7f7f7;
+  height: 850px;
+}
+.container3 h2{
+  color : #3F5ABE
+  height: 2800px;
+}
+.container2 p{
+  background-color: #f7f7f7;
+}
+.container2 h1{
+  font-family: Courier New;
+  margin-bottom: 30px;
+  background-color: #f7f7f7;
+}
+.container2 strong{
+  background-color: #f7f7f7;
+}
+.container3{
+  margin: 0 auto;
+  max-width: 1000px; 
+  padding: 0px;
+  position: relative;
+  top: 100px;
+  height: 1725px;
+  text-align: center;
+}
+.container2{
+  margin: 0 auto;
+  max-width: 950px; 
+  padding: 0 10px;
+  background-color: #f7f7f7;
+  position: relative;
+  top: 150px;
+  background-size: cover;
+  height: 700px;
+  text-align: center;
+}
+.header .container {
+  position: relative;
+  top: 70px;
+}
+.header {
+  background-color : #b8d3ff;
+  height: 800px;
+  text-align: center; 
+}
+.header h1 {
+  color: #3F5ABE;
+  font-family: Courier New;
+  line-height: 120px; 
+  font-size: 50px;
+  text-transform: uppercase;
+  text-shadow : 5px 5px 5px white;
+}
+.header h2 {
+  color: #3F5ABE;
+  font-family: Courier New;
+  line-height: 120px; 
+  font-size: 30px;
+  text-transform: uppercase;
+}
+.header img {
+  border-radius: 50%;
+  box-shadow: 5px 5px 5px #000000;
+}
+.verticalLine {
+  border-left: solid #e3feff;
+    margin-left: -100px;
+}
+.verticalLine2 {
+  border-right: solid #e3feff;
+  margin-right: -100px;
+   height: 600px;
+}
+.icon-bar {
+  position: fixed;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+footer{
+  margin: 0 auto;
+  padding: 0 10px;
+  top: 100px;
+  height: 400px;
+  width : 100%;
+  position: relative;
+  background-color: #23415C;
+  padding: 5% 5% 10% 5%;
+  color: #FFF;
+
+
+}
+
+.icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 20px;
+}
+
+
+.linkedin .github .instagram .resume{
+  color: white;
+}
+
+ .navbar-nav { 
+            margin-left: auto; 
+        } 
