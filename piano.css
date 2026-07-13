@@ -1,171 +1,348 @@
-table {
-  height: 40%;
-  left: 10%;
-  margin: 20px auto;
-  overflow-y: scroll;
-  position: static;
-  width: 90%;
-}
-html {
-  scroll-behavior: smooth;
-}
-h1{
-  font-family: fantasy;
-}
-{
-  margin:0;
-  padding:0;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*, *::before, *::after {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-.contactInfo
-{
+:root {
+  --navy: #0a0f2c;
+  --blue: #1a2a6c;
+  --purple: #6c63ff;
+  --teal: #00d4aa;
+  --accent: #ff6b9d;
+  --lavender: #b8d3ff;
+  --light-bg: #f0f4ff;
+  --text-dark: #1a1a2e;
+  --text-mid: #4a4a6a;
+  --card-bg: rgba(255,255,255,0.06);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--light-bg);
+  color: var(--text-dark);
+  min-height: 100vh;
+}
+
+/* ===== HEADER ===== */
+.header {
+  position: relative;
+  min-height: 60vh;
   display: flex;
-  justify-content: center;
   align-items: center;
-  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 50%, #3b1f6e 100%);
+  text-align: center;
 }
-.contactForm
-{
+
+.header-bg {
+  position: absolute;
+  inset: 0;
+  background: url(bigstock-Music-background-with-piano-ke-85189055.jpg) center/cover no-repeat;
+  opacity: 0.12;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 60%, rgba(108,99,255,0.4) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 30%, rgba(0,212,170,0.2) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.header-content {
+  position: relative;
+  z-index: 2;
+  padding: 60px 20px;
+}
+
+.back-link {
+  position: absolute;
+  top: 28px;
+  left: 36px;
+  color: rgba(255,255,255,0.65);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-decoration: none;
   display: flex;
-  align-items: right;
-  flex-direction: column;
-  width:40%;
-  padding:40px;
-  color:#000000;
-  background: #fff;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.2s;
+  z-index: 3;
 }
-.contactForm h2
-{
-  font-size:30px;
-  font-weight:500;
-  color: #333;
-}
-.inputBox
-{
-  width:100%;
-  position:relative;
-  margin-top:10px;
-}
-.contactForm .iputBox input{
-  width:100%;
-  padding:5px 0;
-  font-size:16px;
-  margin:10px 0;
-  border:none;
-  border-bottom: 2px solid #333;
-  outline: none;
-  resize:none;
-}
-.container2{
-  margin: 0 auto;
-  max-width: 950px; 
-  padding: 0 10px;
-  position: relative;
-  top: 200px;
-  background-size: cover;
-  height: 870px;
-  text-align: center;
-}
-.container3{
-  margin: 0 auto;
-  max-width: 950px; 
-  padding: 0 10px;
-  position: relative;
-  top: 200px;
-  bottom:300px;
-  background-size: cover;
-  height: 870px;
-  text-align: center;
-}
-.content{
-  text-align: center;
-}
-footer{
-  margin: 0 auto;
-  padding: 0 10px;
-  top: 300px;
-  height: 700px;
-  width : 100%;
-  position: relative;
-  background: url(1.jpg);
-  background-size: cover;
-  padding: 5% 5% 10% 5%;
-  color: #FFF;
-
-}
-
-thead th {
-  background: #88CCF1;
-  color: #FFF;
-  font-family: 'Lato', sans-serif;
-  font-size: 18px;
-  font-weight: 100;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-#blah {
-  background: #000000;
-  color: #FFF;
-  font-family: 'Lato', sans-serif;
-  font-size: 18px;
-  font-weight: 100;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-
-}
-
-h2{
-  font-family: cursive;
-}
+.back-link:hover { color: white; }
+.back-link::before { content: '←'; font-size: 1rem; }
 
 .header h1 {
-  color: #fff;
-  line-height: 140px; 
-  font-size: 80px;
-  margin-top: 40;
-  margin-bottom: 40px;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  letter-spacing: 3px;
   text-transform: uppercase;
-  text-shadow:5px 5px 5px #000000; 
+  background: linear-gradient(135deg, #fff 0%, var(--lavender) 50%, var(--purple) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 12px;
 }
-.header {
-  background: url(bigstock-Music-background-with-piano-ke-85189055.jpg) no-repeat center center; 
-  background-size: cover;
 
-  height: 810px;
-  text-align: center; 
+.header p {
+  color: rgba(255,255,255,0.6);
+  font-size: 0.95rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
 }
-.header .container {
+
+/* ===== SONG SECTIONS ===== */
+.songs-section {
+  padding: 80px 40px;
+}
+
+.songs-section:nth-child(even) {
+  background: white;
+}
+
+.section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.section-header h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--blue);
   position: relative;
-  top: 200px;
 }
 
-.fixed-bg {
-  background-image: url("background-piano-music-wallpaper-and-desktop-background-.jpg");
-  min-height: 500px;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: white;
 }
 
-tr {
-  background: #f4f7f8;
-  border-bottom: 5px solid #FFF;
-  margin-bottom: 5px;
+.badge-classical { background: linear-gradient(135deg, #1a2a6c, #6c63ff); }
+.badge-pop       { background: linear-gradient(135deg, #ff6b9d, #ff8e53); }
+.badge-anime     { background: linear-gradient(135deg, #8b5cf6, #00d4aa); }
+
+/* ===== SONG TABLE ===== */
+.song-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 8px;
 }
 
-th, td {
-  font-family: 'Lato', sans-serif;
-  font-weight: 400;
-  font-size: 18px;
-  padding: 20px;
+.song-table thead th {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-mid);
+  padding: 0 20px 12px;
   text-align: left;
-  width: 33.3333%;
-  border-left:5px solid #FFF;
+  border-bottom: 2px solid rgba(108,99,255,0.12);
 }
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #000000
+
+.song-table tbody tr {
+  background: white;
+  border-radius: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 12px rgba(108,99,255,0.07);
+}
+
+.songs-section:nth-child(even) .song-table tbody tr {
+  background: var(--light-bg);
+}
+
+.song-table tbody tr:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 20px rgba(108,99,255,0.15);
+}
+
+.song-table tbody td {
+  padding: 16px 20px;
+  font-size: 0.92rem;
+  color: var(--text-dark);
+  vertical-align: middle;
+}
+
+.song-table tbody td:first-child {
+  border-radius: 12px 0 0 12px;
+  font-weight: 600;
+}
+
+.song-table tbody td:last-child {
+  border-radius: 0 12px 12px 0;
+}
+
+.song-table a {
+  color: var(--purple);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.song-table a:hover {
+  color: var(--teal);
+}
+
+.pill-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(108,99,255,0.08);
+  border: 1px solid rgba(108,99,255,0.2);
+  color: var(--purple) !important;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  transition: all 0.2s ease !important;
+}
+
+.pill-link:hover {
+  background: var(--purple) !important;
+  color: white !important;
+  border-color: var(--purple) !important;
+}
+
+/* ===== SUGGESTIONS FOOTER ===== */
+.suggestions {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 50%, #3b1f6e 100%);
+  padding: 80px 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.suggestions::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 70% 50%, rgba(108,99,255,0.25) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.suggestions-inner {
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.suggestions h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 12px;
+}
+
+.suggestions p {
+  color: rgba(255,255,255,0.65);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+}
+
+.form-group.full { grid-column: 1 / -1; }
+
+.form-group label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+}
+
+.form-group input,
+.form-group textarea {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 10px;
+  padding: 12px 16px;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(255,255,255,0.3);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--purple);
+  background: rgba(108,99,255,0.12);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.submit-btn {
+  width: 100%;
+  margin-top: 8px;
+  padding: 14px;
+  background: linear-gradient(135deg, var(--purple), #8b5cf6);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(108,99,255,0.4);
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(108,99,255,0.55);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 700px) {
+  .songs-section { padding: 60px 20px; }
+  .form-row { grid-template-columns: 1fr; }
+  .section-header { flex-direction: column; align-items: flex-start; }
 }
